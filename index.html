@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>投票宣传</title>
+	<style>
+		body{
+			padding: 10px 0 0 0 ;
+			margin: 0;
+			background: #32a2e1;
+		}
+		.sbox{
+			width: 1100px;
+			height: 100%;
+			margin: 0 auto;
+		}
+		img{
+			display: block;
+			margin: 0 auto;
+		}
+		.box{
+			width: 100%;
+		}
+	</style>
+</head>
+
+<body style="height:1265px">
+	<div class="box">
+		<div class="sbox">
+			<img aa="img/1.png"  src="img/1.png" width="900" height="335" alt="">
+			<img aa="img/21.png"  src="img/21.png" width="900" height="300"alt="">
+			<img src="img/3.png" aa="img/3.png" alt="">
+			<img src="" aa="img/4.png" alt="">
+			<img src="" aa="img/5.png" alt="">
+			<img src="" aa="img/6.png" width="900" height="370" alt="">
+		</div>
+	</div>
+	<script>
+		var gscroll=function(){
+					var scrollT=document.documentElement.scrollTop||document.body.scrollTop;
+					return scrollT;
+				}
+	</script>
+	<script>
+			window.onscroll=function(){
+				var sbox=document.querySelectorAll(".sbox");
+				var ch=document.documentElement.clientHeight;
+				var scroll=gscroll();
+
+				for(var i=0;i<sbox.length;i++){
+					if(sbox[i].offsetTop<scroll+ch){
+						var imgs=document.querySelectorAll("img",sbox[i]);
+						for(var j=0;j<imgs.length;j++){
+							imgs[j].src=imgs[j].getAttribute("aa");
+						}
+					}
+				}
+			}
+	</script>
+</body>
+</html>
